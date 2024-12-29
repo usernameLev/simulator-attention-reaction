@@ -1,0 +1,107 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* Убираем 100vh */
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h4 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+h4 span {
+  color: #ffa500;
+}
+
+.time-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#yellowCount,
+#orangeCount,
+#redCount,
+#totalClicks {
+  font-size: 16px;
+  /* Заменено с 1vw */
+}
+
+#timer {
+  font-size: 32px;
+  /* Заменено с 2vw */
+  font-weight: bold;
+}
+
+#color-box {
+  width: 300px;
+  /* Заменено с 80vw */
+  height: auto;
+  aspect-ratio: 1;
+  max-width: 300px;
+  background-color: gray;
+  margin: auto;
+}
+
+#time-left {
+  font-size: 32px;
+  /* Заменено с 2vw */
+  color: #555;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+button {
+  font-size: 32px;
+  /* Заменено с 2vw */
+}
+
+.bt {
+  display: flex;
+  justify-content: center;
+  grid-gap: 20px;
+  margin: 20px 0;
+}
+
+.container-colors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Медиа-запросы для дополнительных настроек на маленьких экранах */
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 36px;
+  }
+
+  #timer {
+    font-size: 36px;
+  }
+
+  #time-left {
+    font-size: 24px;
+  }
+
+  button {
+    font-size: 24px;
+  }
+}

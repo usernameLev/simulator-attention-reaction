@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тренажер на внимание и реакцию</title>
+  <link rel="icon" href="attention.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Тренажер на внимание и реакцию</h1>
+    <h4>Кликать только на <span>Оранжевый квадрат!</span></h4>
+    <div id="color-box"></div>
+    <div class="time-container">
+      <div id="time-left">Осталось времени</div>
+      <div id="timer">
+        <span id="timeCount">30</span>
+      </div>
+    </div>
+    <div class="bt">
+      <button id="startPauseBtn">Начать</button>
+      <button id="stopBtn">Стоп</button>
+    </div>
+    <div class="container-colors">
+      <div id="yellowCount">Желтый: 0</div>
+      <div id="orangeCount">Оранжевый: 0</div>
+      <div id="redCount">Красный: 0</div>
+      <div id="totalClicks">Всего кликов: 0</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
