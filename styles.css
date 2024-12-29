@@ -106,3 +106,13 @@ button {
     font-size: 24px;
   }
 }
+
+@media (max-width: 370px) {
+#time-left {
+  margin-right: 0;    
+}
+  
+.time-container {
+  justify-content: space-around;
+}
+}
