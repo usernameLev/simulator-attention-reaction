@@ -10,6 +10,7 @@ body {
 }
 
 .container {
+  min-widht: 320px;
   text-align: center;
   margin: 0 10px;
 }
@@ -49,8 +50,7 @@ h4 span {
 }
 
 #color-box {
-  width: 300px;
-  /* Заменено с 80vw */
+  width: 100%;
   height: auto;
   aspect-ratio: 1;
   max-width: 300px;
