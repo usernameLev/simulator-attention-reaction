@@ -11,11 +11,11 @@ body {
 
 .container {
   text-align: center;
+  margin: 0 10px;
 }
 
 h1 {
   font-size: 40px;
-  padding: 0 20px;
 }
 
 h4 {
