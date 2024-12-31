@@ -20,6 +20,9 @@ const timerDisplay = document.getElementById('timer');
 const startPauseBtn = document.getElementById('startPauseBtn');
 const stopBtn = document.getElementById('stopBtn');
 
+// Устанавливаем tabindex для colorBox
+colorBox.setAttribute('tabindex', '0'); // Позволяет фокусироваться на элементе
+
 function changeColor() {
   const randomIndex = Math.floor(Math.random() * colors.length);
   colorBox.style.backgroundColor = colors[randomIndex];
@@ -59,7 +62,7 @@ function pauseGame() {
   clearInterval(intervalId);
   intervalId = null;
   isGameActive = false; // Игра приостановлена
-  startPauseBtn.textContent = 'Продолжить'; // Изменяем текст кнопки
+  startPauseBtn.textContent = 'Продолжить'; // Меняем текст кнопки
 }
 
 function resumeGame() {
@@ -124,34 +127,48 @@ function updateColorClickCountsDisplay() {
 
 // Обработчик клика по цветной области
 colorBox.addEventListener('click', () => {
+  handleColorBoxClick();
+});
+
+// Обработчик клавиатурных событий
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    handleColorBoxClick();
+  } else if (event.key === ' ') {
+    handleColorBoxClick();
+  }
+});
+
+function handleColorBoxClick() {
   if (isGameActive && timerValue > 0) {
     const currentColor = colorBox.style.backgroundColor;
     colorClickCounts[currentColor]++;
     totalClicks++;
     updateColorClickCountsDisplay();
   }
-});
+}
 
 // Обработчики событий для кнопок управления игрой
 startPauseBtn.addEventListener('click', () => {
   if (!isGameActive) {
     if (startPauseBtn.textContent === 'Начать заново?') {
-      resetGame(); // Сброс игры при нажатии на "Начать заново?"
+      resetGame();
     } else {
       startGame();
       timerDisplay.textContent = ' ' + Math.ceil(timerValue);
     }
   } else if (startPauseBtn.textContent === 'Пауза') {
     pauseGame();
-    return; // Не сбрасываем счетчики кликов при паузе
+    return;
   } else {
-    resumeGame(); // Возобновляем игру при нажатии на "Продолжить"
+    resumeGame();
     timerDisplay.textContent = ' ' + Math.ceil(timerValue);
   }
 });
 
 // Обработчик события для кнопки "Стоп"
 stopBtn.addEventListener('click', () => {
-  stopGame(); // Останавливаем игру
-  resetGame(); // Сбрасываем все параметры игры
+  stopGame();
+  resetGame();
 });
